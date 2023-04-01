@@ -1,49 +1,45 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import * as React from "react";
+import { Link, HeadFC, PageProps } from "gatsby";
+import {
+  Box,
+  Code,
+  Heading,
+  Link as ChakraLink,
+  Text,
+  Button,
+} from "@chakra-ui/react";
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
+    <Box p={24} fontFamily="-apple-system, Roboto, sans-serif, serif">
+      <Heading as="h1" mt={0} mb={16} maxW="container.sm">
+        Page not found
+      </Heading>
+      <Text mb={12}>
         Sorry 😔, we couldn’t find what you were looking for.
         <br />
         {process.env.NODE_ENV === "development" ? (
           <>
             <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            Try creating a page in{" "}
+            <Code colorScheme="yellow" p={1} fontSize="lg" borderRadius="base">
+              src/pages/
+            </Code>
+            .
             <br />
           </>
         ) : null}
         <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+        <Button>
+          <ChakraLink as={Link} to="/">
+            Go home
+          </ChakraLink>
+        </Button>
+      </Text>
+    </Box>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head: HeadFC = () => <title>Not found</title>;
