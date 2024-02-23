@@ -8,13 +8,6 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: [
-    {
-      // https://chakra-ui.com/getting-started/gatsby-guide
-      resolve: "@chakra-ui/gatsby-plugin",
-      options: {},
-    },
-  ],
 };
 
 export default config;
