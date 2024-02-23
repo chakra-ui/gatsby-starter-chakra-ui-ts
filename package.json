@@ -15,11 +15,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "theme": "chakra-cli tokens path/to/theme.ts",
-    "theme:watch": "chakra-cli tokens path/to/theme.ts --watch"
+    "theme": "chakra-cli tokens src/theme/index.ts",
+    "theme:watch": "chakra-cli tokens src/theme/index.ts --watch"
   },
   "dependencies": {
-    "@chakra-ui/gatsby-plugin": "^3.1.1",
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
